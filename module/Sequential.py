@@ -1,7 +1,6 @@
 import numpy as np
 from module.optimizer.Adam import Adam
 from module.optimizer.RMSProp import RMSProp
-from module.optimizer.SGD import SGD
 
 class Sequential:
 
@@ -60,9 +59,7 @@ class Sequential:
         if isinstance(optimizer, str):
             if optimizer == "adam":
                 self.optimizer = Adam()
-            if optimizer == "sgd":
-                self.optimizer = SGD()
-            if optimizer == "rmsprop":
+            elif optimizer == "rmsprop":
                 self.optimizer = RMSProp()
         else: self.optimizer = optimizer
         
